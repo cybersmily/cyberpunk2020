@@ -18,7 +18,8 @@ export class CyberpunkActorSheet extends ActorSheet {
       // Default window dimensions
       width: 590,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "skills" }]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "skills" },
+      {navSelector: ".lifepath-tabs", contentSelector: ".lifepath-section", initial:"style"}]
     });
   }
 
@@ -231,5 +232,8 @@ export class CyberpunkActorSheet extends ActorSheet {
       });
       dialog.render(true);
     });
+    
+    // LIFE PATH TRIGGERS
+    LifepathUtils.bindHTMLEvents(html, this.actor);
   }
 }
