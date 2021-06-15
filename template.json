@@ -692,11 +692,32 @@
 				"humanity": 50
 			},
 			"lifepath": {
-				"events": "",
-				"family": "",
-				"style": "",
-				"motivations": "",
-				"notes": ""
+				"lifepath": {
+					"lifeEvents": [],
+					"familyBackground": {
+						"ranking": "",
+						"parents": "",
+						"history": "",
+						"siblings": []
+					},
+					"personalStyle": {
+						"clothes": "",
+						"hair": "",
+						"affectations": ""
+					},
+					"ethnicity": {
+						"origin": "",
+						"language": ""
+					},
+					"personalMotivations": {
+						"traits": "",
+						"valuedPerson": "",
+						"valueMost": "",
+						"feelAboutPeople": "",
+						"valuedPossession": ""
+					},
+					"notes": ""
+				}
 			},
 			"hitLocations": {
 				"hitLocations": {
