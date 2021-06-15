@@ -2,6 +2,7 @@ import { martialOptions, meleeAttackTypes, meleeBonkOptions, rangedModifiers, we
 import { localize, localizeParam } from "../utils.js"
 import { ModifiersDialog } from "../dialog/modifiers.js"
 import { SortOrders } from "./skill-sort.js";
+import { LifepathUtils } from "./lifepath-utils.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications

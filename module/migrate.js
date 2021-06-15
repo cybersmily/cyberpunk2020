@@ -151,6 +151,36 @@ export async function migrateActorData(actorData) {
         updateData.items = currentItems.concat(currentItems, skillsToAdd);
     }
 
+    // convert the old 
+    if(actorData.lifepath) { 
+        const lp = actorData.lifepath;
+        let lpnotes = '';
+        // TODO: Switch hard coded string with language json variable.
+        if(lp.events && typeof lp.events === 'string') {
+            lpnotes += `LIFE EVENTS: ${lp.events};\n\n`;
+            
+        }
+        if(lp.family && typeof lp.family === 'string') {
+            lpnotes += `FAMILY: ${lp.family};\n\n`;
+        }
+        if(lp.style && typeof lp.style === 'string') {
+            lpnotes += `STYLE: ${lp.style};\n\n`;
+        }
+        if(lp.motivations && typeof lp.motivations === 'string') {
+            lpnotes += `MOTIVATIONS: ${lp.motivations};\n\n`;
+        }
+        if (actorData.notes && typeof actorData.notes === 'string' ) {
+            lpnotes = `${actorData.notes} -- ${lpnotes}`;
+        }
+        // delete the old lifepath properties
+        update[`lifepath.events`] = undefined;
+        update[`lifepath.family`] = undefined;
+        update[`lifepath.style`] = undefined;
+        update[`lifepath.motivations`] = undefined;
+
+        update[`lifepath.notes`] = lpnotes;
+    }
+
     return updateData;
 } 
 
